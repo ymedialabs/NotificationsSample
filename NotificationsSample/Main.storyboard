@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NotificationsSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WV-H4-1ys">
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="onClickSendNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UM4-X2-As9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysj-Fr-SBo">
+                                <state key="normal" title="Remove"/>
+                                <connections>
+                                    <action selector="onClickRemoveNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tAj-qK-WDI"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="We are testing notifications." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vg7-WW-3uZ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="qiB-AP-pJV"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0WV-H4-1ys" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3UU-Kc-x30"/>
+                            <constraint firstItem="0WV-H4-1ys" firstAttribute="top" secondItem="vg7-WW-3uZ" secondAttribute="bottom" constant="37.5" id="939-ll-sw5"/>
+                            <constraint firstAttribute="trailing" secondItem="vg7-WW-3uZ" secondAttribute="trailing" constant="20" id="Bw3-Bd-zrH"/>
+                            <constraint firstItem="0WV-H4-1ys" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YLF-xo-Zkk"/>
+                            <constraint firstItem="vg7-WW-3uZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="hcy-Li-blj"/>
+                            <constraint firstItem="Ysj-Fr-SBo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hqR-6j-VOS"/>
+                            <constraint firstItem="Ysj-Fr-SBo" firstAttribute="top" secondItem="0WV-H4-1ys" secondAttribute="bottom" constant="18" id="yhe-fq-Q5M"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="notificationBodyField" destination="vg7-WW-3uZ" id="WNq-dI-A2w"/>
+                        <outlet property="removeButton" destination="Ysj-Fr-SBo" id="UWa-7B-pm1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="-127"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" customModule="CustomUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xsm-Jj-Z0c" customClass="PlayerView" customModule="CustomUI" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="1ct-It-db5"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBp-V9-e7i">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="FR4-nh-PYZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8H-ei-gMX">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="BZA-I7-Gcf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <color key="textColor" red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXe-N3-Hde">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="XLC-bE-cr0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.45882353186607361" green="0.74901962280273438" blue="0.66666668653488159" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xsm-Jj-Z0c" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="20" id="814-zw-xbF"/>
+                            <constraint firstItem="g8H-ei-gMX" firstAttribute="leading" secondItem="jBp-V9-e7i" secondAttribute="leading" id="CIH-yg-oTJ"/>
+                            <constraint firstItem="Xsm-Jj-Z0c" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="Euq-bl-Zwm"/>
+                            <constraint firstAttribute="trailing" secondItem="jBp-V9-e7i" secondAttribute="trailing" constant="8" id="N7l-1m-tAg"/>
+                            <constraint firstItem="VXe-N3-Hde" firstAttribute="trailing" secondItem="jBp-V9-e7i" secondAttribute="trailing" id="Q8k-ge-G4M"/>
+                            <constraint firstItem="g8H-ei-gMX" firstAttribute="trailing" secondItem="jBp-V9-e7i" secondAttribute="trailing" id="SVP-yF-S7P"/>
+                            <constraint firstItem="jBp-V9-e7i" firstAttribute="top" secondItem="Xsm-Jj-Z0c" secondAttribute="bottom" constant="20" id="T6o-Z6-num"/>
+                            <constraint firstAttribute="trailing" secondItem="Xsm-Jj-Z0c" secondAttribute="trailing" id="YHY-gZ-nNQ"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="VXe-N3-Hde" secondAttribute="bottom" constant="20" id="fbY-Gj-Dez"/>
+                            <constraint firstItem="VXe-N3-Hde" firstAttribute="top" secondItem="g8H-ei-gMX" secondAttribute="bottom" constant="8" id="gcN-Bj-DDC"/>
+                            <constraint firstItem="jBp-V9-e7i" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="8" id="r8k-MO-BYj"/>
+                            <constraint firstItem="g8H-ei-gMX" firstAttribute="top" secondItem="jBp-V9-e7i" secondAttribute="bottom" constant="5" id="xFG-t6-EhX"/>
+                            <constraint firstItem="VXe-N3-Hde" firstAttribute="leading" secondItem="jBp-V9-e7i" secondAttribute="leading" id="xn5-UM-b6c"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="500"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="VXe-N3-Hde" id="wZB-v7-Gqf"/>
+                        <outlet property="playerView" destination="Xsm-Jj-Z0c" id="Hku-Ic-WuX"/>
+                        <outlet property="subtitleLabel" destination="g8H-ei-gMX" id="Mhb-2K-mPN"/>
+                        <outlet property="titleLabel" destination="jBp-V9-e7i" id="jhe-QP-U3L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-254.40000000000001" y="25.187406296851577"/>
+        </scene>
+    </scenes>
+</document>
