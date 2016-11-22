@@ -21,7 +21,6 @@ class NotificationService: UNNotificationServiceExtension {
     
     if let bestAttemptContent = bestAttemptContent {
       // Modify the notification content here...
-      bestAttemptContent.title = "\(bestAttemptContent.title)"
       
       if bestAttemptContent.categoryIdentifier == "recipe" {
         let url = URL(string: "https://s3-us-west-2.amazonaws.com/notificationvideos/recipe2.mp4")

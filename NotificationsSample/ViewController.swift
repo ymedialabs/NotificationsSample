@@ -15,7 +15,7 @@ class ViewController: UIViewController {
   var notificationBodyString: String = "We are testing notifications."
   
   @IBOutlet weak var notificationBodyField: UITextField!
-  
+
   @IBOutlet weak var removeButton: UIButton!
   
   override func viewDidLoad() {
@@ -25,11 +25,24 @@ class ViewController: UIViewController {
     
     notificationBodyField.delegate = self
     
-    UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) {[weak self] (granted, error) in
+    requestPermissionsWithCompletionHandler { (granted) -> (Void) in
       
-      UIApplication.shared.registerForRemoteNotifications()
+      DispatchQueue.main.async {
+        if granted {
+          UIApplication.shared.registerForRemoteNotifications()
+        }
+      }
+    }
+    
+  }
+  
+  private func requestPermissionsWithCompletionHandler(completion: ((Bool) -> (Void))? ) {
+    
+    UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) {[weak self] (granted, error) in
+  
       guard error == nil else {
         
+        completion?(false)
         return
       }
       
@@ -37,11 +50,13 @@ class ViewController: UIViewController {
         
         UNUserNotificationCenter.current().delegate = self
         self?.setNotificationCategories()
+
       }
+      
+      completion?(granted)
     }
-    
   }
-  
+ 
   private func setNotificationCategories() {
     
     let likeAction = UNNotificationAction(identifier: "like", title: "Like", options: [])
@@ -73,7 +88,7 @@ class ViewController: UIViewController {
     
     let content = UNMutableNotificationContent()
     content.title = "Local Notifications"
-    content.subtitle =  "Good weather"
+    content.subtitle =  "Good Morning"
     
     if  let characters = notificationBodyField.text?.characters, let text = notificationBodyField.text , characters.count > 0 {
       
@@ -89,9 +104,6 @@ class ViewController: UIViewController {
     
     let attachment = try! UNNotificationAttachment(identifier: "image", url: url!, options: [:])
     content.attachments = [attachment]
-    
-//    let appleAttachment = try! UNNotificationAttachment(identifier: "appleImage", url: url!, options: [:])
-//    content.attachments = [attachmen]
     
     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
     
